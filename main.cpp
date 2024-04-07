@@ -7,15 +7,14 @@ int main(){
     cout << "Ingrese el numero de dimension que desea ingresar";
     cin >> dimen;
 
-    while( dimen < 0 && dimen % 2 !== 0){
-
-        cout << "Ingreso una dimension no valida";
-        cout << "Ingrese el numero de dimension que desea ingresar";
+    while (dimen < 0 || dimen % 2 == 0) {
+        cout << "Ingreso una dimension no valida" << endl;
+        cout << "Ingrese el numero de dimension que desea ingresar: ";
         cin >> dimen;
     }
 
-    e(dimen);
-
-
+    
+    imprimirMatrix(crearMatrix(dimen), dimen);
+    imprimirMatrix(rotarMatriz(crearMatrix(dimen), dimen), dimen);
 
 }
