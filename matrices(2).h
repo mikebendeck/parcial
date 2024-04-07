@@ -8,20 +8,13 @@ int copiaMatriz(int**, int**, int);
 int e( int numDim )
 {
 
-    int **ptr, **mtr;
+    int **ptr;
     
     ptr = new int * [numDim];
-    mtr = new int * [numDim];
-    
-    
     
     for (int i=0; i<numDim; i++){
         ptr [i] = new int [numDim];
     }
-    for (int i=0; i<numDim; i++){
-        mtr [i] = new int [numDim];
-    }
-    
     
     int contador=0;
     for (int fila=0; fila<numDim; fila++){
@@ -31,43 +24,14 @@ int e( int numDim )
         
         }
     }
-    
-    rotarMatriz(ptr,mtr, numDim);
-    imprimirmatrices(ptr, mtr, numDim);
-    cout << "\n\n";
-    
 
-    copiaMatriz(mtr, ptr, numDim);
-    rotarMatriz(ptr,mtr,numDim);
-    imprimirmatrices(ptr, mtr, numDim);
-    cout << "\n\n";
-    
-    copiaMatriz(mtr, ptr, numDim);
-    rotarMatriz(ptr,mtr,numDim);
-    imprimirmatrices(ptr, mtr, numDim);
-    cout << "\n\n";
 
-    
-
-    
-
-    
-    for (int i=0; i<numDim; i++){
-        delete [] ptr[i];
-        // ptr[i] = NULL;
+    for (int i = 0; i < numDim; i++) {
+    for (int j = 0; j < numDim; j++) {
+        cout << ptr[i][j] << " ";
     }
-    for (int i=0; i<numDim; i++){
-        delete [] mtr[i];
-        // ptr[i] = NULL;
-    }
-
-    
-    
-    delete  [] ptr;
-    ptr = NULL;
-    delete  [] ptr;
-    mtr = NULL;
-    
+    cout << endl;
+}    
 
     return 0;
 }
