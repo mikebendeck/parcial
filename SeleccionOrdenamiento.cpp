@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 void SeleccionOrdenamiento(int arr[], int size) {
     for (int i = 0; i < size; i++) {
@@ -17,22 +18,34 @@ void SeleccionOrdenamiento(int arr[], int size) {
 }
 int main() {
 
-    int arr[] = {5, 3, 8, 2, 1, 7, 4, 6}; // Array desordenado
-    int size = sizeof(arr) / sizeof(arr[0]); // Tamaño del array
+    int size;
 
-    std::cout << "Antes de ordenar:" << std::endl;
-    for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+    cout << "Ingrese el tamaño del array" << endl;
+    cin >> size;
+
+    while( size <= 0){
+
+        cout << "Ingreso un numero negativo o igual a cero" << endl;
+        cout << "Ingrese el tamaño del array" << endl;
+        cin >> size;
+
     }
-    std::cout << std::endl;
 
-    SeleccionOrdenamiento(arr, size); // Ordenar el array
+    int* arr = new int[size];
 
-    std::cout << "Después de ordenar:" << std::endl;
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << "Ingrese el numero en posicion " << i << endl;
+        cin >> arr[i];
     }
-    std::cout << std::endl;
+
+    SeleccionOrdenamiento(arr, size);
+
+    cout << "Después de ordenar:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
 
     return 0;
 }
