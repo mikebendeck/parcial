@@ -1,10 +1,10 @@
 #include <iostream>
 
-int*** create3DArray(int* dimensiones) {
-    int length = sizeof(dimensiones) / sizeof(dimensiones[0]);
-    int*** array3D = new int**[length];
+int*** create3DArray(int* dimensiones, int len) {
 
-    for (int i = 0; i <= length; i++) {
+    int*** array3D = new int**[len];
+
+    for (int i = 0; i <= len; i++) {
         array3D[i] = crearMatrix(dimensiones[i]);
     }
 
